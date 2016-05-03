@@ -4,7 +4,10 @@
 	<title>Home | A Visualization System Prototype of Security Monitoring Product</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+	<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.20/topojson.min.js"></script>
+	<script type="text/javascript" src="js/colorbrewer.js"></script>
+	<script type="text/javascript" src="js/map.js"></script>
 	<link rel="stylesheet" type="text/css" href='./stylesheets/bootstrap.min.css'>
 	<link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
 </head>
@@ -28,7 +31,7 @@
 				<h5 class="no-margin m-b">Pie Chart</h5>
 			</div>
 			<div class="panel-body">
-				<div id="piechart" style="height:250px;">
+				<div id="piechart" style="height:350px;">
 					
 				</div>
 			</div>
@@ -38,10 +41,19 @@
 	<div class='col-sm-12 col-md-8'>
 		<div class="panel panel-card">
 			<div class="panel-title">
-				<h5 class='no-margin m-b'>Sensor Memory Monitor</h5>
+				<h5 class='no-margin m-b'>State Businesses Counts
+					<select id="map_star" onchange="changeSelection()">
+						<option value="data/state_rating_counts_0.0.csv">All</option>
+						<option value="data/state_rating_counts_1.0.csv">Star >= 1.0</option>
+						<option value="data/state_rating_counts_2.0.csv">Star >= 2.0</option>
+						<option value="data/state_rating_counts_3.0.csv">Star >= 3.0</option>
+						<option value="data/state_rating_counts_4.0.csv">Star >= 4.0</option>
+					</select>
+				</h5>
+
 			</div>
 			<div class="panel-body">
-				<div id="map" style="height:270px;"></div>
+				<div id="map" style="height:350px;"></div>
 			</div>
 		</div>
 	</div>
@@ -87,17 +99,13 @@
 	</div>
 
 </div>
+<script>
+drawMap();
+</script>
 
 
 
 
-
-<script src='./javascripts/d3.v3.min.js'></script>
-<script src='./javascripts/jquery.min.js'></script>
-<script src='./javascripts/bootstrap.min.js'></script>
-<script src='./javascripts/vue.min.js'></script>
-
-<script src='./javascripts/integrateIndex.js'></script>
 <!--<script src='./javascripts/experimentIndex.js'></script>-->
 </body>
 </html>
