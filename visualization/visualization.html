@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>Home | A Visualization System Prototype of Security Monitoring Product</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" type="text/css" href='./stylesheets/bootstrap.min.css'>
+	<link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+</head>
+<body id='table'>
+<div class='container'>
+	<div class="col-sm-12 col-md-12">
+		<h1>Yelp Dataset Visualization System</h1>
+		<p></p>
+	</div>
+</div>
+
+<br>
+
+<div class='container'>
+	<div class="col-sm-12 col-md-12">
+		<h3>SENSOR PART</h3>
+	</div>
+	<div class="col-sm-12 col-md-4">
+		<div class="panel panel-card people-panel">
+			<div class="panel-title">
+				<h5 class="no-margin m-b">Pie Chart</h5>
+			</div>
+			<div class="panel-body">
+				<div id="piechart" style="height:250px;">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class='col-sm-12 col-md-8'>
+		<div class="panel panel-card">
+			<div class="panel-title">
+				<h5 class='no-margin m-b'>Sensor Memory Monitor</h5>
+			</div>
+			<div class="panel-body">
+				<div id="map" style="height:270px;"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class='col-sm-12 col-md-8'>
+		<div class="panel panel-card">
+			<div class="panel-title">
+				<h5 class='no-margin m-b'>Sensor: People Distance and Duration Monitor</h5>
+			</div>
+			<div class="panel-body">
+				<div id="sensor-dis-dur-timeline-d3" style="height:247px;"></div>
+			</div>
+		</div>
+	</div>
+
+	
+<div class='container'>
+	<div class="col-sm-12 col-md-12">
+		<h3>DOCKER PART</h3>
+	</div>
+
+	<div class='col-sm-12 col-md-4'>
+		<div class="panel panel-card">
+			<div class="panel-title">
+				<h5 class='no-margin m-b'>Docker CPU Monitor</h5>
+			</div>
+			<div class="panel-body">
+				<div id="docker-cpu-rect-d3" style="height:280px;"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class='col-sm-12 col-md-8'>
+		<div class="panel panel-card">
+			<div class="panel-title">
+				<h5 class='no-margin m-b'>Sensor Memory Monitor</h5>
+			</div>
+			<div class="panel-body">
+				<div id="docker-mem-area-d3" style="height:280px;"></div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+<script src='./javascripts/d3.v3.min.js'></script>
+<script src='./javascripts/jquery.min.js'></script>
+<script src='./javascripts/bootstrap.min.js'></script>
+<script src='./javascripts/vue.min.js'></script>
+
+<script src='./javascripts/integrateIndex.js'></script>
+<!--<script src='./javascripts/experimentIndex.js'></script>-->
+</body>
+</html>
+
