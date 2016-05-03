@@ -9,7 +9,7 @@ class StateRatingsCount(MRJob):
 			if data['type']=='business':
 				state = data['state']
 				stars = data['stars']
-				if stars >= 1.0:
+				if stars > 1.0 and stars <= 2.0:
 					yield (state,1)
 
 
