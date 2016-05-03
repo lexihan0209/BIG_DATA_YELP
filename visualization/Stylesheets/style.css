@@ -260,5 +260,27 @@ body {
     fill: #41DB00;
     stroke: white;
 }
+#tooltip-container {
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  border: 1px solid;
+  display: none;
+}
+.tooltip_key {
+  font-weight: bold;
+}
+.tooltip_value {
+  margin-left: 20px;
+  float: right;
+}
+.arc text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
 
+.arc path {
+  stroke: #fff;
+}
 /*END: STYLESHEETS FOR VIS CHARTS*/
