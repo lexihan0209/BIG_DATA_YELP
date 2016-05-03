@@ -9,7 +9,7 @@ class StarRatingsCountYear3(MRJob):
 			if data['type']=='review':
 				date = data['date']
 				stars = data['stars']
-				if (stars >= 3.0):
+				if (stars > 2.0 and stars <= 3.0):
 					date=date.split("-")
 					year = date[0]
 					yield (year, 1)
