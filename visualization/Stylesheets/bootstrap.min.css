@@ -1917,7 +1917,9 @@ pre code {
 .col-xs-6 {
     width: 50%
 }
-
+.col-sm-customize {
+        width: 50%
+    }
 .col-xs-5 {
     width: 41.66666667%
 }
@@ -2119,6 +2121,9 @@ pre code {
     .col-sm-8 {
         width: 66.66666667%
     }
+    .col-sm-customize {
+        width: 50%
+    }
 
     .col-sm-7 {
         width: 58.33333333%
@@ -2318,7 +2323,9 @@ pre code {
     .col-md-11 {
         width: 91.66666667%
     }
-
+    .col-sm-customize {
+        width: 50%
+    }
     .col-md-10 {
         width: 83.33333333%
     }
@@ -2525,7 +2532,7 @@ pre code {
     .col-lg-12 {
         width: 100%
     }
-
+    
     .col-lg-11 {
         width: 91.66666667%
     }

@@ -57,6 +57,27 @@ function drawLineChart(id){
 		
 		createLineAndCircle(g,data,colorbrewer['Paired'][12][11]);
 	})
+
+	var colorbar = g.append("g").attr("transform","translate("+ (width + 20) + ", 30)");
+	colorbar.selectAll("rect").data(['1 star','2 star','3 star','4 star','5 star','All']).enter().append("rect")
+	.attr("width",50).attr("height",3).attr("x",0).attr("y",function(d,i){return 20 * i}).style("fill",function(d,i){
+		if(i == 0){return colorbrewer['Paired'][12][0]}
+		if(i == 1){return colorbrewer['Paired'][12][3]}
+		if(i == 2){return colorbrewer['Paired'][12][5]}
+		if(i == 3){return colorbrewer['Paired'][12][7]}
+		if(i == 4){return colorbrewer['Paired'][12][9]}
+		if(i == 5){return colorbrewer['Paired'][12][11]}
+	})
+	colorbar.selectAll("text").data(['1 star reviews','2 star reviews','3 star reviews','4 star reviews','5 star reviews','All']).enter().append("text")
+	.attr("x",55).attr("y",function(d,i){return 22 * i}).style("fill",function(d,i){
+		if(i == 0){return colorbrewer['Paired'][12][0]}
+		if(i == 1){return colorbrewer['Paired'][12][3]}
+		if(i == 2){return colorbrewer['Paired'][12][5]}
+		if(i == 3){return colorbrewer['Paired'][12][7]}
+		if(i == 4){return colorbrewer['Paired'][12][9]}
+		if(i == 5){return colorbrewer['Paired'][12][11]}
+	})
+	.text(function(d){return d;})
 	
 
 }
@@ -88,4 +109,6 @@ function createLineAndCircle(g,data,color){
 					.on("mouseout",function(d,i){
 						d3.select(this).append("title").remove();
 					})
+
+
 }

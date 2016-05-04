@@ -8,7 +8,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.20/topojson.min.js"></script>
 	<script type="text/javascript" src="js/colorbrewer.js"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 	<script type="text/javascript" src="js/piechart.js"></script>
+	<script type="text/javascript" src="js/accountchart.js"></script>
+	<script type="text/javascript" src="js/reviewbarchart.js"></script>
 	<script type="text/javascript" src="js/barchart.js"></script>
 	<script type="text/javascript" src="js/map.js"></script>
 	<link rel="stylesheet" type="text/css" href='./stylesheets/bootstrap.min.css'>
@@ -31,7 +34,7 @@
 	<div class="col-sm-12 col-md-4">
 		<div class="panel panel-card">
 			<div class="panel-title">
-				<h5 class="no-margin m-b">Star Review Counts</h5>
+				<h5 class="no-margin m-b">Star Review Statistics</h5>
 			</div>
 			<div >
 				<div id="piechart" style="height:350px;">
@@ -46,11 +49,12 @@
 			<div class="panel-title">
 				<h5 class='no-margin m-b'>State Businesses Counts
 					<select id="map_star" onchange="changeSelection()">
-						<!--<option value="data/state_rating_counts_0.0.csv">All</option>-->
-						<option value="data/state_rating_counts_1.0.csv">All</option>
-						<option value="data/state_rating_counts_2.0.csv">Star >= 2.0</option>
-						<option value="data/state_rating_counts_3.0.csv">Star >= 3.0</option>
-						<option value="data/state_rating_counts_4.0.csv">Star >= 4.0</option>
+						<option value="data/state_rating_counts_all.csv">All</option>
+						<option value="data/state_rating_counts_0.0.csv">Star > 0.0 and Star <= 1.0</option>
+						<option value="data/state_rating_counts_1.0.csv">Star > 1.0 and Star <= 2.0</option>
+						<option value="data/state_rating_counts_2.0.csv">Star > 2.0 and Star <= 3.0 </option>
+						<option value="data/state_rating_counts_3.0.csv">Star > 3.0 and Star <= 4.0 </option>
+						<option value="data/state_rating_counts_4.0.csv">Star > 4.0 and Star <= 5.0 </option>
 					</select>
 				</h5>
 
@@ -66,7 +70,7 @@
 	<div class='col-sm-12 col-md-8'>
 		<div class="panel panel-card">
 			<div class="panel-title">
-				<h5 class='no-margin m-b'>State Businesses Counts</h5>
+				<h5 class='no-margin m-b'>Review Statistics</h5>
 			</div>
 			<div class="panel-body">
 				<div id="tooltip-container"></div>
@@ -77,14 +81,27 @@
 
 
 
-	<div class='col-sm-12 col-md-8'>
-		<div class="panel panel-card">
+	<div class='col-sm-12 col-sm-customize' style="float:left">
+		<div class="panel panel-card" style="width:100%;float:left">
 			<div class="panel-title">
-				<h5 class='no-margin m-b'>State Businesses Counts</h5>
+				<h5 class='no-margin m-b'>User Registeration Statistics</h5>
 			</div>
 			<div class="panel-body">
 				<div id="tooltip-container"></div>
 				<div id="accountlinechart" style="height:350px;"></div>
+
+			</div>
+		</div>
+	</div>
+	<div class='col-sm-12 col-sm-customize' style="float:left">
+		<div class="panel panel-card" style="width:100%;float:left">
+			<div class="panel-title">
+				<h5 class='no-margin m-b'>User Review Statistics</h5>
+			</div>
+			<div class="panel-body">
+				<div id="tooltip-container"></div>
+				<div id="reviewbarchart" style="height:350px;"></div>
+
 			</div>
 		</div>
 	</div>
@@ -94,7 +111,8 @@
 drawMap();
 drawPieChart();
 drawLineChart("#reviewlinechart");
-drawLineChart("#accountlinechart");
+drawAccountChart("#accountlinechart");
+drawReviewBarChart("#reviewbarchart");
 </script>
 
 

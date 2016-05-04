@@ -2,7 +2,7 @@ var colorscale = d3.scale.quantize().domain([0,1000]).range(colorbrewer['RdYlGn'
 var name_id_map;
 var id_name_map;
 function drawMap(file){
-	d3.csv("data/state_rating_counts_0.0.csv",function(error,data){
+	d3.csv("data/state_rating_counts_all.csv",function(error,data){
 		var object = {};
 		data.forEach(function(d){
 			object[d.State] = d.Count;
